@@ -7,9 +7,9 @@ const xata = new XataClient({
 
 export default async function handler() {
   try {
-    const { records } = await xata.sql`SELECT * FROM users`;
+    const data = await xata.db.users.getAll();
 
-    return new Response(JSON.stringify({ message: 'A-Ok!', data: records }, null, 2), {
+    return new Response(JSON.stringify({ message: 'A-Ok!', data }, null, 2), {
       status: 200,
       headers: { 'content-type': 'application/json' },
     });
