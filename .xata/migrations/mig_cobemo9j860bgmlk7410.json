@@ -1,0 +1,30 @@
+{
+  "done": true,
+  "migration": {
+    "name": "mig_cobemo9j860bgmlk7410",
+    "operations": [
+      {
+        "add_column": {
+          "up": "''",
+          "table": "users",
+          "column": {
+            "pk": false,
+            "name": "last_name",
+            "type": "text",
+            "check": {
+              "name": "users_xata_string_length_last_name",
+              "constraint": "LENGTH(\"last_name\") <= 2048"
+            },
+            "unique": false,
+            "comment": "{\"xata.type\":\"string\"}",
+            "nullable": false
+          }
+        }
+      }
+    ]
+  },
+  "migrationType": "pgroll",
+  "name": "mig_cobemo9j860bgmlk7410",
+  "parent": "mig_cobemld5la3quq2b1jtg",
+  "startedAt": "2024-04-10T19:41:22.558755Z"
+}

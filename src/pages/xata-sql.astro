@@ -1,0 +1,31 @@
+---
+import { XataClient } from '../xata';
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+interface user {
+  first_name: string;
+  last_name: string;
+  email: string;
+}
+
+let data = null;
+
+try {
+  const { records } = await xata.sql<user[]>`SELECT * FROM users`;
+  data = records;
+} catch (error) {
+  console.error(error);
+}
+---
+
+<html lang='en'>
+  <body>
+    <a href='/'>Back</a>
+    <h1>Xata SQL</h1>
+    <pre>{JSON.stringify(data, null, 2)}</pre>
+  </body>
+</html>

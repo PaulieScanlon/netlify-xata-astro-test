@@ -1,0 +1,24 @@
+---
+import { XataClient } from '../xata';
+
+const xata = new XataClient({
+  apiKey: import.meta.env.XATA_API_KEY,
+  branch: import.meta.env.XATA_BRANCH,
+});
+
+let data = null;
+
+try {
+  data = await xata.db.users.getAll();
+} catch (error) {
+  console.error(error);
+}
+---
+
+<html lang='en'>
+  <body>
+    <a href='/'>Back</a>
+    <h1>Xata SDK</h1>
+    <pre>{JSON.stringify(data, null, 2)}</pre>
+  </body>
+</html>

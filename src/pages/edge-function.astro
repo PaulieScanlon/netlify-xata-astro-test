@@ -1,0 +1,16 @@
+<html lang='en'>
+  <body>
+    <a href='/'>Back</a>
+    <h1>Edge Functions</h1>
+    <pre id='pre'></pre>
+  </body>
+  <script>
+    const response = await fetch('/get-all-users', {
+      method: 'GET',
+    });
+
+    const data = await response.json();
+    const pre = document.getElementById('pre');
+    pre!.innerHTML = `${JSON.stringify(data, null, 2)}`;
+  </script>
+</html>

@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Paul-Scanlon-s-workspace-k9noia.us-east-1.xata.sh/db/test-db",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
