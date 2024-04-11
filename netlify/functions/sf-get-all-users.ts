@@ -1,4 +1,4 @@
-import { XataClient } from 'xata';
+import { XataClient } from '../../src/xata';
 
 const xata = new XataClient({
   apiKey: Netlify.env.get('XATA_API_KEY'),
@@ -21,4 +21,4 @@ export default async function handler() {
   }
 }
 
-export const config = { path: '/get-all-users' };
+export const config = { path: '/sf-get-all-users' };
