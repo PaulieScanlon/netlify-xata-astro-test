@@ -1,4 +1,4 @@
-import { XataClient } from '../../src/xata';
+import { XataClient } from 'xata';
 
 const xata = new XataClient({
   apiKey: Netlify.env.get('XATA_API_KEY'),
